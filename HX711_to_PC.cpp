@@ -3,16 +3,15 @@
 #include "uLCD_4DGL.h"
 #include <cmath>
 
-//uLCD_4DGL uLCD(p9, p10, p11); tx, rx, pin leaving this out for now
 Serial pc(USBTX, USBRX); // tx rx
 HX711 scale(p15, p16); // p16 - clk, p15 - dat
 DigitalIn pb1(p20);
 DigitalIn pb2(p22);
 DigitalIn pb3(p21);
 
-//AnalogIn scaleRaw(p18); leaving this out too lol
 
-float calibration_factor = -190500; // I do not know why, but the only program runs with this, don't remove
+
+float calibration_factor = -190500; // Our calibration factor. Entirely dependent on circuit schematic and mechanical setup.
 int averageSamples = 100;
 
 int main(void)
@@ -61,16 +60,10 @@ int main(void)
 			{
 				pc.printf("Reading: %.2f (kg)\r\n", (abs(weight)/1000));
 			}   
-			//pc.printf("Reading: %.2f\n", weight); no
-			//pc.printf("Raw Value: %.7f\n", raw); no haha
+			
 			 
 			pc.printf("Reading: %.2f (lbs)\r\n", abs(weight)/453.59237);
 			pc.printf("Percentage of Bar Usage: %.2f %%\r\n\r\n\r\n", (abs(weight)/10000)*100);
-				
-			//int prcnt;
-			//prcnt = ( (abs(weight)/10000)*100);
-			//wait_ms(10);
-			// pc.printf("$%d;", prcnt); >>FIX
 
 			if(pc.readable()) 
 			{

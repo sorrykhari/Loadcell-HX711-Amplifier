@@ -3,7 +3,7 @@
 #include "uLCD_4DGL.h"
 #include <cmath>
 
-uLCD_4DGL uLCD(p9, p10, p11); //tx, rx, pin leaving this out for now
+uLCD_4DGL uLCD(p9, p10, p11); //tx, rx, pin 
 HX711 scale(p15, p16); // p16 - clk, p15 - dat
 
 //Define the push buttons
@@ -13,10 +13,10 @@ DigitalIn pb3(p21); // 1
 
 //AnalogIn scaleRaw(p18); leaving this out too lol
 
-float calibration_factor = -190500; // I do not know why, but the only program runs with this, don't remove
+float calibration_factor = -190500; // This is a mechanically determined calibration factor. Dependent on our personal circuit schemaric.
 int averageSamples = 100;
 int state;
-enum buttonstate {INIT = 0, BUTTON_PRESSED_ONCE = 1, BUTTON_PRESSED_TWICE =2};
+enum buttonstate {INIT = 0, BUTTON_PRESSED_ONCE = 1, BUTTON_PRESSED_TWICE =2}; // this creates an ON and OFF button for the device.
 
 int main(void)
 {
@@ -85,21 +85,7 @@ int main(void)
             scale.setScale(calibration_factor); //Adjust to this calibration factor
             float weight = scale.getGram();
             uLCD.printf("\nC.F.: %.2f\n\n", calibration_factor);
-            //float raw = scaleRaw.read();
-           /* if (weight < 1000)
-            {
-                pc.printf("Reading: %.2f (g)\r\n", abs(weight));
-            }
-            else
-            {
-                pc.printf("Reading: %.2f (kg)\r\n", (abs(weight)/1000));
-            }   
-            // uLCD.printf("Reading: %.2f\n", weight); no
-            //pc.printf("Raw Value: %.7f\n", raw); no haha
-            // uLCD.printf(" calibration_factor: %.2f\n", calibration_factor); . . .
-            */
-           /* int prcnt;
-            prcnt = ((abs(weight)/10000)*100);*/
+
             uLCD.printf("\nWeight: %.2f (lbs)\n\n", abs(weight)/453.59237);
             uLCD.printf("Prcnt Used: %.2f %%\n\n\n", ((abs(weight)/10000)*100));
             
@@ -109,7 +95,7 @@ int main(void)
 
            if(holder == 6) 
             {
-                //char temp = pc.getc();
+                
                 if(pb2 == 0)
                 {
                    calibration_factor += 500;

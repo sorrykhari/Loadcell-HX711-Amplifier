@@ -14,4 +14,5 @@ Flow chart of the design.
 Schematic of how the load cells are attached to the parallel bars.
 
 Demo video can be seen here:
-https://www.youtube.com/watch?v=cRCrc0A3chg
+https://www.youtube.com/watch?v=cRCrc0A3chg (PC display)
+https://www.youtube.com/watch?v=dmq8OizVPzI (LCD display)

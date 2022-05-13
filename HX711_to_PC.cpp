@@ -29,7 +29,7 @@ int main(void)
     
       
     scale.setScale(0);
-    scale.setScale(0); //Reset the scale to 0 should be .tare
+    scale.setScale(0); //Reset the scale to 0 should be
     
     long zero_factor = scale.averageValue(averageSamples); //Get a baseline reading
     pc.printf("Zero factor: %.4f\r\n" , zero_factor); //This can be used to remove the need to tare the scale. Useful in permanent scale projects.

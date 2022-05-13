@@ -11,7 +11,7 @@ DigitalIn pb1(p20); // 1
 DigitalIn pb2(p22); // 1
 DigitalIn pb3(p21); // 1
 
-//AnalogIn scaleRaw(p18); leaving this out too lol
+//AnalogIn scaleRaw(p18); leaving this out too 
 
 float calibration_factor = -190500; // This is a mechanically determined calibration factor. Dependent on our personal circuit schemaric.
 int averageSamples = 100;

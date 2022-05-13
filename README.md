@@ -18,4 +18,4 @@ Demo video can be seen here:
 https://www.youtube.com/watch?v=cRCrc0A3chg (PC display)
 
 
-https://www.youtube.com/watch?v=dmq8OizVPzI (LCD display)
+https://www.youtube.com/watch?v=WukZRqbfhk0 (LCD display)

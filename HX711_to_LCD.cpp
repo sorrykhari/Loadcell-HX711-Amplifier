@@ -59,20 +59,6 @@ int main(void)
     {
         //check if button was pushed, save variable (state) --> press button again to exit this while loop enum (state of button not pressed button pressed once button pressed twice)
 
-
-        /*
-        enum buttonstate {BUTTON_NOT_PRESSED, BUTTON_PRESSED_ONCE, BUTTON,PRESSED_TWICE}
-        //better naming convention?? {INIT, START, END}
-
-        if (pushbutton == 0)
-        {
-            state++;
-        }
-        while (state == BUTTON_PRESSED_ONCE)
-        {
-            //execute code
-        }
-        */
         if(pb1 == 0)
         {
             i++;

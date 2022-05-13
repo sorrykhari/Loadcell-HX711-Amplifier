@@ -67,7 +67,6 @@ int main(void)
         if (pushbutton == 0)
         {
             state++;
-    
         }
         while (state == BUTTON_PRESSED_ONCE)
         {
